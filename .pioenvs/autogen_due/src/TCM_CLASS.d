@@ -1,4 +1,5 @@
-.pioenvs/autogen_due/src/piomain.o: .pioenvs/autogen_due/src/piomain.cpp \
+.pioenvs/autogen_due/src/TCM_CLASS.o: \
+ .pioenvs/autogen_due/src/TCM_CLASS.cpp \
  .pioenvs/autogen_due/FrameworkArduino/Arduino.h \
  .pioenvs/autogen_due/FrameworkArduino/avr/pgmspace.h \
  .pioenvs/autogen_due/FrameworkArduino/avr/interrupt.h \
@@ -130,5 +131,4 @@
  .pioenvs/autogen_due/FrameworkArduino/USB/USBDesc.h \
  .pioenvs/autogen_due/FrameworkArduino/USB/USBCore.h \
  .pioenvs/autogen_due/FrameworkArduino/USB/USBAPI.h \
- .pioenvs/autogen_due/FrameworkArduino/RingBuffer.h \
- .pioenvs/autogen_due/src/TCM_CLASS.h
+ .pioenvs/autogen_due/FrameworkArduino/RingBuffer.h
