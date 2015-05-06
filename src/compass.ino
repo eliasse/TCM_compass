@@ -53,7 +53,7 @@ void loop() {
     
     Serial.write("Frame ID: \n");
     Serial.print(frameID);
-    Serial.print(payLoad,ASCII);
+    Serial.print(payLoad);
   }
   delay(500);
 }
