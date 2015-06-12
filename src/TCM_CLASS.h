@@ -19,8 +19,8 @@ class TCM_MB_COMPASS {
     kGetData = 4,
     kGetDataResp = 5,
     
-    kStartContinousMode = 21,
-    kStopContinousMode = 22
+    kStartContinousMode = 21, // Not yet implemented
+    kStopContinousMode = 22   // ------ || ------
   };
   
   enum kSetDataComponents:byte {

@@ -1,5 +1,6 @@
 #include "TCM_CLASS.h"
 
+
 TCM_MB_COMPASS::TCM_MB_COMPASS(){}
 TCM_MB_COMPASS::TCM_MB_COMPASS(HardwareSerial *SerialPort, int baud)
 {
@@ -12,6 +13,8 @@ void TCM_MB_COMPASS::begin(HardwareSerial *SerialPort, int baud)
   port = SerialPort;
   port->begin(baud);
   Serial.println("Compass communication initialized");
+  Serial.flush();
+  
 }
 
 void TCM_MB_COMPASS::getModInfo(void)
@@ -57,6 +60,9 @@ void TCM_MB_COMPASS::set_data_component_heading(void)
 
 void TCM_MB_COMPASS::set_data_component_heading_pitch_roll(void)
 {  
+
+  Serial.println("DATA COMPONENT");
+  Serial.flush();
   outByteCount[0] = 0;
   outByteCount[1] = 9; // Big endian!
   uint8_t IDcount = (uint8_t)3;
@@ -80,6 +86,7 @@ void TCM_MB_COMPASS::set_data_component_heading_pitch_roll(void)
   port->write(crc[0]);
   port->write(crc[1]);
   port->flush(); // Wait for all data to be sent
+  Serial.println("SETUP FINISHED");
 }
 
 void TCM_MB_COMPASS::update(void)
@@ -116,7 +123,8 @@ void TCM_MB_COMPASS::read(void)
     port->readBytes(checkSum, 2);
     
     uint8_t fid = (uint8_t)frameID; 
-    
+     
+    /*
     Serial.println(fid,DEC);
     Serial.println(inBytes); 
     Serial.println(payLoad[0],DEC); // IDcount = 1
@@ -124,7 +132,7 @@ void TCM_MB_COMPASS::read(void)
     Serial.println(payLoad[6],DEC); // kHeading = 5
     Serial.println(payLoad[11],DEC); // kHeading = 5
     Serial.println(sizeof(payLoad)); 
-    
+    */
     
     switch(frameID)
     {

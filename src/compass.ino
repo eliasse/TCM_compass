@@ -25,9 +25,9 @@ void loop() {
   cmps.update();
   Serial.print("H: ");
   Serial.println(cmps.heading);
-  Serial.print("P: ");
-  Serial.println(cmps.pitch);
-  Serial.print("R: ");
-  Serial.println(cmps.roll);
-  delay(1000);
+  //Serial.print("P: ");
+  //Serial.println(cmps.pitch);
+  //Serial.print("R: ");
+  //Serial.println(cmps.roll);
+  delay(100);
 }
